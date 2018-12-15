@@ -1,0 +1,50 @@
+# Booking Buddy
+
+Booking Buddy is a trip planning solution. It allows the user to input the location of the trip, how long they are going to stay, as well as specify the number of people that are coming along. It then scrapes two of the most popular websites for finding accomodations: Airbnb, and Booking.com.
+
+Once the user inputs all of the required personal information about their trip, they are redirected to the prices page. This page displays the minimum, maximum, and average prices as well as a bar graph showing how many listings are available for each price bucket. This page allows the user to get a feel of what amount of money they should be expecting to spend. On that same page the user defines the price range based on the provided information.
+
+The user is then redirected to the dashboard. This is the main page where only the best listings from Airbnb and Booking are displayed. Booking Buddy gives the best option in the price range that the user had selected before (according to our algorithm) based on the number of reviews and the rating. It also provides the user with 5 other great options based on that same algorithm.
+
+The user can see the details of the property such at the number of reviews, rating, price, price per person, etc. If the user wants to book this property or view it on the map, then she can click on the + button or the name of the property which will redirect them to a new page specific to each of these top properties.
+ 
+
+The initial idea was that any time a price conscious individual is about to book their trip they check Airbnb and one of the major hotel booking sites such as booking. Booking Buddy solves several problems:
+1. Give the user a range that they are expected to pay which is not centrally available anywhere
+2. Major hotel booking websites including booking display on the first page the hotels they have deals with not giving the user the whole scope of prices and options. Booking Buddy scrapes Booking and gives the best options for the user based on the information it received without any bias based on the affiliations with hotels
+3. Shows numerous graphs comparing Airbnb and Booking listings, as well as how the top picks that Booking Buddy has identified stacks against all the other listings based on several dimensions such as the ranking score, number of reviews, and price
+
+Therefore, Booking Buddy is a valuable data solution providing monetary and qualitative context to its users allowing them to find the best listing in the least amount of time.
+
+
+Booking Buddy displays four most important for the user graphs on the dashboard page along with the top listings. 
+
+The First graph called Total Homes per Price Bucket(by company) shows how many
+of each company's (Booking vs Airbnb) listings are in which price bucket. Through testing Booking Buddy on numerous inputs it is evident that the lower price buckets are dominated by the Airbnb and the higher price buckets are dominated by booking on average. 
+
+The second graph called Average Price by Rating Score displays the rating score (based on our algorithm) against the price bucket. It provides the user with information on what price they should be expected to pay for which rating. The general trend is that the higher the rating, the more they are expected to pay.
+
+The third graph called Marginal Price Increase by Rating Increase shows the user how much more they are expected to pay if they want a higher rating or how much less they would need to pay if they want to settle for a lower rating. This is extremely useful because it can show that going one rating bucket down may result in a huge price decrease, and similarly going one price bucket up can result in a minor price change. This graph provides amazing value as the user can see that they may be getting better quality for only a marginal increase in price for the latter example.
+
+The last graph called Our Top Picks Against Total shows how the top picks that Booking 
+Buddy provides (marked in red compared to other listings marked in blue) compare to the 
+rest of the listings based on the price and the rating score that is deduced from our algorithm.
+Through continued testing, we found the Booking Buddy's suggestions end up in the top, meaning having the highest rating while having low to moderate price within the price range. 
+
+Once a user decides to click on the top suggested listings that Booking Buddy displays on the dashboard page, they have an option to see the listing on the map along with an option to book that would lead them to the company's site (Booking or Airbnb). The map was implemented using Selenium for getting the longitude and latitude and Folium for display it to the user. 
+
+The main challenge with this project was the constant website updates we were battling with. The Airbnb html tags would vary occasionally so that some cities would not work when they were inputted.
+
+None of these websites had API's that we could get access to for scraping purposes, so we had to use requests for booking.com and Selenium for airbnb (because the website is javascript enabled)
+
+Therefore, while most listings work, there may be some slight complications getting price for certain cities.
+
+The algorithm for ranking is a split of rating amount and rating score:
+score=5p/10+5(1−e^−q/Q), where p is the score, q is the amount of ratings, and Q is what we deemed a moderate amount of ratings
+What this does is split the score into a number between 0 and 5 (5p/10) then it adds that to 5(1−e^−q/Q). What this does is subtract from 1, the amount of reviews divided by Q, to and put to the exponent of e in order to give it a partition score between 0 and 1. It then multiples that by 5 to get it between 0 and 5. The idea behind it is that we can compare the amount of reviews a home has against what we think a suitable amount is (Q - 30 reviews), giving it a score out of 5, and then dd that to the actual rating score in a 1-5 scale. When we add them we get a score between 0 and 10 that we can rank on. Inspiration for the algorithm comes from Marc Bogaerts of StackExchange.
+
+We originally were going to use the Wilson rating score to do a similar approach, yet the algorithm is better used for thumbs up v thumbs down scoring: http://www.evanmiller.org/how-not-to-sort-by-average-rating.html
+
+We learned a lot while creating this project and want to thank our professor for a great semester!
+
+

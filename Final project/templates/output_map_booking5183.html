@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_51e04484110c400e8e36ab35a54389e5 {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_51e04484110c400e8e36ab35a54389e5" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_51e04484110c400e8e36ab35a54389e5 = L.map(
+        'map_51e04484110c400e8e36ab35a54389e5', {
+        center: [40.709963, -74.008736],
+        zoom: 15,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+    
+    
+    var tile_layer_7c600be0e31644ad8143710a4c5d1269 = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_51e04484110c400e8e36ab35a54389e5);
+    
+        var marker_adf8491c87604ba3871757804d64963c = L.marker(
+            [40.709963, -74.008736],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_51e04484110c400e8e36ab35a54389e5);
+        
+    
+
+                var icon_9731efe8c27e452b9db91b6f74f8706e = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_adf8491c87604ba3871757804d64963c.setIcon(icon_9731efe8c27e452b9db91b6f74f8706e);
+            
+    
+            var popup_bc9a04053829442db0b15805dcde77a0 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_49d7fd73c4f0480896bc2a3d8771468f = $(`<div id="html_49d7fd73c4f0480896bc2a3d8771468f" style="width: 100.0%; height: 100.0%;">The Assemblage John Street</div>`)[0];
+                popup_bc9a04053829442db0b15805dcde77a0.setContent(html_49d7fd73c4f0480896bc2a3d8771468f);
+            
+
+            marker_adf8491c87604ba3871757804d64963c.bindPopup(popup_bc9a04053829442db0b15805dcde77a0)
+            ;
+
+            
+        
+</script>
