@@ -6,4 +6,4 @@ The main file is the new_webserver6.py file. It contains the code for the scrapi
 
 ### Acknowledgments
 
-* NYU Computer Science Department
+* NYU Data Science Department
