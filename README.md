@@ -4,10 +4,6 @@ This project scrapes data live from Airbnb and Booking.com to find you the best 
 
 The main file is the new_webserver6.py file. It contains the code for the scraping, ranking, and outputting the data for the user to view locations.
 
-### Authors
-
-* Chris Osufsen 
-
 ### Acknowledgments
 
 * NYU Stern Data Science Department
